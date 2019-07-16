@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -27,12 +28,59 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-let g:gruvbox_termcolors=16
-let g:gruvbox_contrast_light='soft'
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#formatter = 'default'
-
-colorscheme gruvbox
-:set number
 syntax on
+colorscheme gruvbox
+:let g:airline_theme='gruvbox'
+:set background=dark
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_termcolors = 256
+
+set tabstop=4
+set softtabstop=4   " spaces when editing
+set shiftwidth=4
+set expandtab
+retab
+
+set number          " see numberlines
+
+set showcmd         " see last command
+
+set cursorline      " see cursorline
+
+filetype indent on  " spec indent files, filetype tracking
+
+set showmatch       " set parens to match each other
+
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+
+
+filetype plugin indent on
+syntax on
+
+set laststatus=2
+set t_Co=256
+
+" symbols section for unicode/airline symbols
+
+" air-line
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.whitespace = 'Ξ'
