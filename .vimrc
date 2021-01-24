@@ -84,3 +84,8 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_symbols.whitespace = 'Ξ'
+
+set backspace=2
+set colorcolumn=72
+
+call matchadd("ErrorMsg", "\\%>79v.\\+", 10, 4)
